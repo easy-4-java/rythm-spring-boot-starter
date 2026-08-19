@@ -19,6 +19,12 @@ import java.util.Properties;
 
 import org.springframework.boot.autoconfigure.template.AbstractTemplateViewResolverProperties;
 
+/**
+ * <p>Configuration properties for Rythm.</p>
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class RythmProperties extends AbstractTemplateViewResolverProperties {
 
 	public static final String DEFAULT_TEMPLATE_LOADER_PATH = "classpath:/templates/";

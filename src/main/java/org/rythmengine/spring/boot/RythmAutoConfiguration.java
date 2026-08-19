@@ -38,6 +38,12 @@ import org.springframework.web.servlet.resource.ResourceUrlEncodingFilter;
 @ConditionalOnClass({ RythmEngine.class})
 @AutoConfigureAfter(WebMvcAutoConfiguration.class)
 @EnableConfigurationProperties(RythmProperties.class)
+/**
+ * <p>Spring Boot auto-configuration for Rythm.</p>
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class RythmAutoConfiguration {
 	
 	private static final Logger logger = LoggerFactory.getLogger(RythmAutoConfiguration.class);

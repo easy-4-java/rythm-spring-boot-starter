@@ -21,6 +21,12 @@ import java.util.List;
 
 import org.springframework.boot.autoconfigure.template.PathBasedTemplateAvailabilityProvider;
 
+/**
+ * <p>RythmTemplateAvailabilityProvider implementation.</p>
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 public class RythmTemplateAvailabilityProvider extends PathBasedTemplateAvailabilityProvider {
 
 	public RythmTemplateAvailabilityProvider() {
