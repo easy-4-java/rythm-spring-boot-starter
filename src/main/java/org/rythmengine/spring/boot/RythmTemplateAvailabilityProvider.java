@@ -42,14 +42,26 @@ public class RythmTemplateAvailabilityProvider extends PathBasedTemplateAvailabi
 		}
 
 		@Override
+    /**
+     * <p>Returns the loader path.</p>
+     * @return the get loader path
+     */
 		protected List<String> getLoaderPath() {
 			return this.templateLoaderPath;
 		}
 
+    /**
+     * <p>Returns the template loader path.</p>
+     * @return the get template loader path
+     */
 		public List<String> getTemplateLoaderPath() {
 			return this.templateLoaderPath;
 		}
 
+    /**
+     * <p>Sets the template loader path.</p>
+     * @param templateLoaderPath
+     */
 		public void setTemplateLoaderPath(List<String> templateLoaderPath) {
 			this.templateLoaderPath = templateLoaderPath;
 		}

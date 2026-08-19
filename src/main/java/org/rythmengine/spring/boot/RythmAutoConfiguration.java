@@ -58,6 +58,9 @@ public class RythmAutoConfiguration {
 	}
 
 	@PostConstruct
+    /**
+     * <p>Check template location exists.</p>
+     */
 	public void checkTemplateLocationExists() {
 		if (this.properties.isCheckTemplateLocation()) {
 			TemplateLocation templatePathLocation = null;
@@ -84,6 +87,10 @@ public class RythmAutoConfiguration {
 		@Autowired
 		protected RythmProperties properties;
 
+    /**
+     * <p>Apply properties.</p>
+     * @param factory
+     */
 		protected void applyProperties(BeetlConfiguration factory) {
 			/*factory.setTemplateLoaderPaths(this.properties.getTemplateLoaderPath());
 			factory.setPreferFileSystemAccess(this.properties.isPreferFileSystemAccess());
@@ -101,12 +108,21 @@ public class RythmAutoConfiguration {
 
 		@Bean
 		@ConditionalOnMissingBean
+    /**
+     * <p>Resource loader.</p>
+     * @return the resource loader
+     */
 		public ResourceLoader resourceLoader() {
 			return new PathMatchingResourcePatternResolver();
 		}
 		
 		@Bean
 		@ConditionalOnMissingBean
+    /**
+     * <p>Rythm engine factory.</p>
+     * @param resourceLoader
+     * @return the rythm engine factory
+     */
 		public RythmEngineFactory rythmEngineFactory(ResourceLoader resourceLoader) {
 			RythmEngineFactory factory = new RythmEngineFactory();
 			//factory.setEnableCache(enableCache);
@@ -117,6 +133,11 @@ public class RythmAutoConfiguration {
 		
 		@Bean
 		@ConditionalOnMissingBean
+    /**
+     * <p>Rythm engine.</p>
+     * @param rythmEngineFactory
+     * @return the rythm engine
+     */
 		public RythmEngine rythmEngine(RythmEngineFactory rythmEngineFactory) throws RythmException, IOException {
 			return rythmEngineFactory.createRythmEngine();
 		}
@@ -130,6 +151,11 @@ public class RythmAutoConfiguration {
 		
 		@Bean
 		@ConditionalOnMissingBean
+    /**
+     * <p>Rythm configurer.</p>
+     * @param resourceLoader
+     * @return the rythm configurer
+     */
 		public RythmConfigurer rythmConfigurer(ResourceLoader resourceLoader) {
 			RythmConfigurer configurer = new RythmConfigurer();
 			//configurer.setEnableCache(enableCache);
@@ -140,6 +166,10 @@ public class RythmAutoConfiguration {
 		
 		@Bean
 		@ConditionalOnMissingBean
+    /**
+     * <p>Resource loader.</p>
+     * @return the resource loader
+     */
 		public ResourceLoader resourceLoader() {
 			return new PathMatchingResourcePatternResolver();
 		}
@@ -147,6 +177,10 @@ public class RythmAutoConfiguration {
 		@Bean
 		@ConditionalOnMissingBean(name = "rythmViewResolver")
 		@ConditionalOnProperty(name = "spring.rythm.enabled", matchIfMissing = true)
+    /**
+     * <p>Beetl view resolver.</p>
+     * @return the beetl view resolver
+     */
 		public RythmViewResolver beetlViewResolver() {
 			RythmViewResolver resolver = new RythmViewResolver();
 			this.properties.applyToMvcViewResolver(resolver);
@@ -156,6 +190,10 @@ public class RythmAutoConfiguration {
 		@Bean
 		@ConditionalOnMissingBean
 		@ConditionalOnEnabledResourceChain
+    /**
+     * <p>Resource url encoding filter.</p>
+     * @return the resource url encoding filter
+     */
 		public ResourceUrlEncodingFilter resourceUrlEncodingFilter() {
 			return new ResourceUrlEncodingFilter();
 		}

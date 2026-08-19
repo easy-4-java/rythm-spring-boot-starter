@@ -58,10 +58,18 @@ public class RythmProperties extends AbstractTemplateViewResolverProperties {
 		super(DEFAULT_PREFIX, DEFAULT_SUFFIX);
 	}
 
+    /**
+     * <p>Returns the settings.</p>
+     * @return the get settings
+     */
 	public Properties getSettings() {
 		return this.settings;
 	}
 
+    /**
+     * <p>Sets the settings.</p>
+     * @param settings
+     */
 	public void setSettings(Properties settings) {
 		this.settings = settings;
 	}
@@ -70,22 +78,42 @@ public class RythmProperties extends AbstractTemplateViewResolverProperties {
 		return this.templateLoaderPath;
 	}
 
+    /**
+     * <p>Checks if prefer file system access.</p>
+     * @return the is prefer file system access
+     */
 	public boolean isPreferFileSystemAccess() {
 		return this.preferFileSystemAccess;
 	}
 
+    /**
+     * <p>Sets the prefer file system access.</p>
+     * @param preferFileSystemAccess
+     */
 	public void setPreferFileSystemAccess(boolean preferFileSystemAccess) {
 		this.preferFileSystemAccess = preferFileSystemAccess;
 	}
 
+    /**
+     * <p>Sets the template loader path.</p>
+     * @param templateLoaderPaths
+     */
 	public void setTemplateLoaderPath(String... templateLoaderPaths) {
 		this.templateLoaderPath = templateLoaderPaths;
 	}
 
+    /**
+     * <p>Checks if auto check.</p>
+     * @return the is auto check
+     */
 	public boolean isAutoCheck() {
 		return autoCheck;
 	}
 
+    /**
+     * <p>Sets the auto check.</p>
+     * @param autoCheck
+     */
 	public void setAutoCheck(boolean autoCheck) {
 		this.autoCheck = autoCheck;
 	}
